@@ -68,10 +68,10 @@ objects.append(pluto)
 #===============================Create and Randomly Place Asteroid Objects=======================
 asteroids = []
 for i in range(100):
-  x = random.randint(-100,0)
+  x = random.randint(-100,100)
   y = random.randint(-100,100)
   z = random.randint(-100,100)
-  a = sphere(pos=((-1.3+x*.01)/AUtoM, (.84+y*.01)/AUtoM, (.42+z*.01)/AUtoM),radius=695.7e6, color = color.green, make_trail=True)
+  a = sphere(pos=((-2+x*.001)/AUtoM, (1.5+y*.001)/AUtoM, (.42+z*.001)/AUtoM),radius=695.7e6, color = color.green, make_trail=True)
   a.velocity = vector((-0.0073845383127117/AUtoMS),  (-0.0094773586392742/AUtoMS),  (-0.00415165513666213/AUtoMS))
   asteroids.append(a)
 
@@ -141,4 +141,5 @@ while(True):
 
 
 #====================Leap Frog Method to calculate timestep/movement======================
+
 
