@@ -28,8 +28,7 @@ venus.velocity = vector((-0.0198938122793425/AUtoMS),  (0.00311311946611859/AUto
 venus.mass = 4.867e24
 
 earth = sphere(pos=((-.136364695954795/AUtoM),(.893397922857/AUtoM),(.387458344639667/AUtoM)), radius = 6.371e6, material = materials.earth, make_trail=True)
-#earth.velocity = vector((-0.0173199988485296/AUtoMS),  (-0.0022443047317656/AUtoMS),  (-0.000973361115758044/AUtoMS))
-#earth.velocity = vector(32,0,0)
+earth.velocity = vector((-0.0173199988485296/AUtoMS),  (-0.0022443047317656/AUtoMS),  (-0.000973361115758044/AUtoMS))
 earth.mass = 5.927e24
 
 mars = sphere(pos=((-1.36983397618342/AUtoM),(.843135248017904/AUtoM), (.423832906611437/AUtoM)),radius = 3.39e6, color = color.red, make_trail=True)
@@ -94,10 +93,11 @@ for i in objects:
 #=============================compensates for center of mass===============================
 
 
+
 #====================Euler Method to calculate timestep/movement==========================
 while(True):
    # rate(50000)
-    rate(100)
+    rate(1000)
     for i in objects:
         i.acceleration = vector(0,0,0)
         for j in objects:
