@@ -72,7 +72,9 @@ for i in range(100):
   y = random.randint(-100,100)
   z = random.randint(-100,100)
   a = sphere(pos=((-2+x*.001)/AUtoM, (1.5+y*.001)/AUtoM, (.42+z*.001)/AUtoM),radius=695.7e6, color = color.green, make_trail=True)
-  a.velocity = vector((-0.0073845383127117/AUtoMS),  (-0.0094773586392742/AUtoMS),  (-0.00415165513666213/AUtoMS))
+##  a.velocity = vector((-0.0073845383127117/AUtoMS),  (-0.0094773586392742/AUtoMS),  (-0.00415165513666213/AUtoMS))
+  #given x and y velocities between the values of mars and jupiter
+  a.velocity = vector((-0.006/AUtoMS),  (-0.007/AUtoMS),  (-0.00415165513666213/AUtoMS))
   asteroids.append(a)
 
 #===============================Create and Randomly Place Asteroid Objects=======================
@@ -107,7 +109,8 @@ for i in asteroids:
 
 
 #====================Leap Frog Method to calculate timestep/movement======================
-firststep = 0 
+firststep = 0
+asfirststep = 0
 while(True):
     rate(2000)
     
@@ -127,10 +130,10 @@ while(True):
             i.velocity = i.velocity + i.acceleration*dt/2.0
             i.pos = i.pos + i.velocity*dt
             firststep = 1
-        for i in asteroids:
-            i.velocity = i.velocity + i.acceleration*dt/2.0
-            i.pos = i.pos + i.velocity*dt
-            firststep = 1
+##        for i in asteroids:
+##            i.velocity = i.velocity + i.acceleration*dt/2.0
+##            i.pos = i.pos + i.velocity*dt
+##            firststep = 1
     else:
         for i in objects:
             i.velocity = i.velocity + i.acceleration*dt
@@ -141,5 +144,3 @@ while(True):
 
 
 #====================Leap Frog Method to calculate timestep/movement======================
-
-
