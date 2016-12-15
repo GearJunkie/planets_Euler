@@ -72,7 +72,7 @@ for i in range(100):
   y = random.randint(-100,100)
   z = random.randint(-100,100)
   a = sphere(pos=((-1.3+x*.01)/AUtoM, (.84+y*.01)/AUtoM, (.42+z*.01)/AUtoM),radius=695.7e6, color = color.green, make_trail=True)
-  a.velocity = vector(0,0,0)
+  a.velocity = vector((-0.0073845383127117/AUtoMS),  (-0.0094773586392742/AUtoMS),  (-0.00415165513666213/AUtoMS))
   asteroids.append(a)
 
 #===============================Create and Randomly Place Asteroid Objects=======================
@@ -109,7 +109,7 @@ for i in asteroids:
 #====================Leap Frog Method to calculate timestep/movement======================
 firststep = 0 
 while(True):
-    rate(20)
+    rate(2000)
     
     for i in objects:
         i.acceleration = vector(0,0,0)
@@ -141,3 +141,4 @@ while(True):
 
 
 #====================Leap Frog Method to calculate timestep/movement======================
+
